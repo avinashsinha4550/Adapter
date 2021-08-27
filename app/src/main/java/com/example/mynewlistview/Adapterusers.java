@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class Adapterusers extends ArrayAdapter<Users> {
+    ArrayList<Users> usersArrayList;
     public Adapterusers(@NonNull Context context, @NonNull ArrayList<Users> Users) {
         super(context, 0, Users);
 
@@ -30,7 +31,11 @@ public class Adapterusers extends ArrayAdapter<Users> {
         EditText usrname=(EditText)convertView.findViewById(R.id.sharedprefedittext);
         EditText name=(EditText)convertView.findViewById(R.id.sharedprefedittext2);
            usrname.setText(users.username);
-        usrname.setText(users.useraddress);
+        name.setText(users.useraddress);
         return  convertView;
+    }
+    public void settaskmodel(ArrayList<Users> usersArrayList)
+    {
+        this.usersArrayList=usersArrayList;
     }
 }
